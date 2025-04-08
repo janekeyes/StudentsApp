@@ -1,0 +1,17 @@
+<h1>New Student</h1>
+
+<%= form_with model: @student, local: true do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Student" %>
+  </div>
+<% end %>
