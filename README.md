@@ -1,24 +1,61 @@
-# README
+# Secure app programming overview
+This Ruby on Rails application allows users to sign up, login, view student details, and manage them with role based access implementations
+- Admins can view, create, edit, and delete student records
+- Regular users can view student records
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
 
-Things you may want to cover:
+## Tools for running the application
+- Ruby
+- Rails
+- Node.js
+- SQLite
 
-* Ruby version
+---
+## Running the application
 
-* System dependencies
+### Clone the GitHub repo
+```bash
+git clone https://github.com/janekeyes/StudentsApp
+cd StudentsApp
 
-* Configuration
+#Install dependencies
+bundle install
 
-* Database creation
+#Set up the database
+bin/rails db:migrate
 
-* Database initialization
+#Start the server
+bin/rails server
 
-* How to run the test suite
+#Local app running
+Run rails server
+You should then be able to sign up or log in
+How you log in determines the CRUD operation permissions you are given
 
-* Services (job queues, cache servers, search engines, etc.)
+#Login as admin
+This allows for full CRUD operation access to all users
+Users can login, view, edit, create, update, and delete students, and logout
 
-* Deployment instructions
+#Admin Credentials
+Email: admin@email.com
+Password: adminpass25
 
-* ...
+#Login as regular user
+This allows view only access to the databse
+Users can login, view, and logout
+
+#View the insecure app
+git checkout insecure
+
+#Switch to the main branch
+git checkout main
+
+#Push changes to branch
+git checkout main  
+git add .
+git commit -m "Commit message"
+git push origin main  
+
+#Pull changes from branch
+git pull origin main 
