@@ -3,8 +3,10 @@ class StudentsController < ApplicationController
     before_action :check_admin, only: [:new, :create, :edit, :update, :destroy]
   
     def index
-      @students = Student.find_by_sql("SELECT * FROM students WHERE name = '#{params[:name]}'")
+      @students = Student.all
+      @message = params[:message]
     end
+    
   
     def new
       @student = Student.new
