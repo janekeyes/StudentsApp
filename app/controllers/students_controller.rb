@@ -3,8 +3,8 @@ class StudentsController < ApplicationController
     before_action :check_admin, only: [:new, :create, :edit, :update, :destroy]
   
     def index
-      @students = Student.all
-    end
+      @students = Student.where(name: params[:name])
+    end    
   
     def new
       @student = Student.new
@@ -21,11 +21,11 @@ class StudentsController < ApplicationController
   
     def edit
       @student = Student.find(params[:id])
-    end
+    end    
     
     def show
       @student = Student.find(params[:id])
-    end
+    end    
     
   
     def update

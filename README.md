@@ -28,7 +28,7 @@ bin/rails db:migrate
 #Start the server
 bin/rails server
 
-#Local app running
+#Run the application locally
 Run rails server
 You should then be able to sign up or log in
 How you log in determines the CRUD operation permissions you are given
@@ -45,17 +45,22 @@ Password: adminpass25
 This allows view only access to the databse
 Users can login, view, and logout
 
-#View the insecure app
+#Switch to the insecure branch
 git checkout insecure
 
 #Switch to the main branch
 git checkout main
 
-#Push changes to branch
-git checkout main  
+#Push changes to the main branch
 git add .
 git commit -m "Commit message"
-git push origin main  
+git push origin main 
+
+#Push changes to the insecure branch
+git push origin insecure
 
 #Pull changes from branch
 git pull origin main 
+
+#Pull changes from insecure
+git pull origin insecure 
