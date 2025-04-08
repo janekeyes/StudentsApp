@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
     before_action :check_admin, only: [:new, :create, :edit, :update, :destroy]
   
     def index
-      @students = Student.all
+      @students = Student.find_by_sql("SELECT * FROM students WHERE name = '#{params[:name]}'")
     end
   
     def new
@@ -20,13 +20,12 @@ class StudentsController < ApplicationController
     end
   
     def edit
-      @student = Student.find(params[:id])
+      @student = Student.find_by_sql("SELECT * FROM students WHERE id = '#{params[:id]}'").first
     end
     
     def show
-      @student = Student.find(params[:id])
-    end
-    
+      @student = Student.find_by_sql("SELECT * FROM students WHERE id = #{params[:id]}").first
+    end     
   
     def update
       @student = Student.find(params[:id])
