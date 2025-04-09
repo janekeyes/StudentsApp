@@ -10,18 +10,28 @@
       </div>
     <% end %>
   
-    <div>
-      <%= form.label :name %><br>
+    <div class="field">
+     <%= form.label :name %>
       <%= form.text_field :name %>
     </div>
-  
-    <div>
-      <%= form.label :email %><br>
-      <%= form.text_field :email %>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.email_field :email %>
     </div>
-  
-    <div>
+
+    <div class="field">
+      <%= form.label :student_number %>
+      <%= form.text_field :student_number, placeholder: "X1234567" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :course %>
+      <%= form.select :course, ['Computer Science', 'Information Systems', 'Software Engineering', 'Cybersecurity'], prompt: "Select a Course" %>
+    </div>
+
+    <div class="actions">
       <%= form.submit %>
     </div>
-  <% end %>
+<% end %>
   

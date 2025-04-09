@@ -9,6 +9,8 @@
 <table>
   <thead>
     <tr>
+      <th>Student Number</th>
+      <th>Course</th>
       <th>Name</th>
       <th>Email</th>
       <% if current_user.role == "admin" %>
@@ -19,6 +21,8 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
+        <td><%= student.student_number %></td>
+        <td><%= student.course %></td>
         <td><%= student.name %></td>
         <td><%= student.email %></td>
         <% if current_user.role == "admin" %>
