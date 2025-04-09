@@ -12,6 +12,16 @@
   </div>
 
   <div>
+    <%= form.label :student_number %>
+    <%= form.text_field :student_number, placeholder: "X1234567" %>
+  </div>
+
+  <div>
+    <%= form.label :course %>
+    <%= form.select :course, ['Computer Science', 'Information Systems', 'Software Engineering', 'Cybersecurity'], prompt: "Select a Course" %>
+  </div>
+
+  <div>
     <%= form.submit "Create Student" %>
   </div>
 <% end %>

@@ -46,8 +46,9 @@ class StudentsController < ApplicationController
     private
   
     def student_params
-      params.require(:student).permit(:name, :email)
+      params.require(:student).permit(:name, :email, :student_number, :course)
     end
+    
   
     def check_admin
       redirect_to students_path, alert: "You are not authorized to perform this action." unless current_user.role == "admin"
