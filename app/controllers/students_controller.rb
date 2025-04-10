@@ -28,10 +28,6 @@ class StudentsController < ApplicationController
     def show
       @student = Student.find_by_sql("SELECT * FROM students WHERE id = '#{params[:id]}'").first
     end
-    
-    
-    
-    
        
   
     def update
