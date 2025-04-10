@@ -1,5 +1,7 @@
 <h1>Student: <%= @student.name %></h1>
 <p>Email: <%= @student.email %></p>
+<p>Student Number: <%= @student.student_number %></p>
+<p>Course: <%= @student.course %></p>
 
 <%= link_to 'Edit', edit_student_path(@student) %>
 <%= link_to 'Back', students_path %>
