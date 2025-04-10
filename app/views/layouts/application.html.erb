@@ -23,13 +23,25 @@
   </head>
 
   <body>
-  <%= yield %>
-  <% if user_signed_in? %>
-    <p>Welcome, <%= current_user.username %>!</p>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Login', new_user_session_path %>
-  <% end %>
-</body>
+    <% if notice %>
+      <div class="alert alert-success">
+        <%= notice %>
+      </div>
+    <% end %>
 
+    <% if alert %>
+      <div class="alert alert-danger">
+        <%= alert %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <% if user_signed_in? %>
+      <p>Welcome, <%= current_user.username %>!</p>
+      <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Login', new_user_session_path %>
+    <% end %>
+  </body>
 </html>
