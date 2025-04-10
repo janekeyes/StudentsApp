@@ -4,8 +4,6 @@
   <%= link_to "Add New Student", new_student_path, class: "btn btn-primary" %>
 <% end %>
 
-<p>Message: <%= @message %></p>
-
 <table>
   <thead>
     <tr>
@@ -28,7 +26,7 @@
         <% if current_user.role == "admin" %>
           <td>
             <%= link_to "Edit", edit_student_path(student) %> |
-            <%= link_to "Delete", student_path(student), method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= button_to "Delete", student_path(student), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
           </td>
         <% end %>
       </tr>
