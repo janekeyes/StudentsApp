@@ -43,17 +43,19 @@ class StudentsController < ApplicationController
       @student = Student.find(params[:id])
       @student.destroy
       redirect_to students_path, notice: 'Student deleted successfully.'
-    end
-  
-    private
-  
-    def student_params
-      params.require(:student).permit(:name, :email, :student_number, :course)
-    end
-    
-  
-    def check_admin
-      redirect_to students_path, alert: "You are not authorized to perform this action." unless current_user.role == "admin"
+    else
+      logger.error "Could not delete student with ID #{@student.id}."
+      redirect_to students_path, alert: 'Failed to delete student.'
     end
   end
-  
+
+  private
+
+  def student_params
+    params.require(:student).permit(:name, :email, :student_number, :course)
+  end
+
+  def check_admin
+    redirect_to students_path, alert: "You are not authorized to perform this action." unless current_user.role == "admin"
+  end
+end
